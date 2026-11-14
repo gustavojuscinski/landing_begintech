@@ -1,15 +1,15 @@
-/** Configuração central — edite aqui antes de publicar. */
+/**
+ * Configuração central da beginTECH.
+ * Os links e mensagens do site são montados a partir destes dados.
+ */
 window.BEGINTECH_CONFIG = {
   empresa: 'beginTECH',
-  telefone: '5542999999999', // DDI + DDD + número, apenas dígitos. SUBSTITUIR.
-  telefoneExibicao: '(42) 99999-9999', // SUBSTITUIR.
-  email: 'contato@begintech.com.br', // CONFIRMAR.
-  localizacao: 'Brasil',
-  instagram: 'https://www.instagram.com/', // SUBSTITUIR.
-  facebook: 'https://www.facebook.com/', // SUBSTITUIR.
-  linkedin: 'https://www.linkedin.com/', // SUBSTITUIR.
-  youtube: 'https://www.youtube.com/', // SUBSTITUIR.
-  googleAvaliacoes: '', // Cole a URL pública do perfil no Google.
+  telefone: '5542991512459',
+  telefoneExibicao: '(42) 99151-2459',
+  email: 'contato@begintech.com.br',
+  localizacao: 'Empresa online',
+  instagram: 'https://www.instagram.com/begintech.solucoes/',
+  googleAvaliacoes: '',
   mensagemPadrao: 'Olá! Conheci a beginTECH pelo site e gostaria de conversar sobre um projeto.',
   mensagens: {
     orcamento: 'Olá! Gostaria de solicitar um orçamento para meu projeto.',

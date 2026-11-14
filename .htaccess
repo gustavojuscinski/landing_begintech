@@ -1,0 +1,35 @@
+# beginTECH - URLs amigáveis para Hostinger (LiteSpeed/Apache)
+Options -MultiViews
+RewriteEngine On
+RewriteBase /
+
+# HTTPS e domínio canônico são mantidos pela configuração atual da hospedagem.
+
+# Redirecionar URLs antigas para as URLs públicas sem .html
+RewriteRule ^html/index\.html$ /inicio [R=301,L,NC]
+RewriteRule ^html/servicos\.html$ /servicos [R=301,L,NC]
+RewriteRule ^html/portfolio\.html$ /portfolio [R=301,L,NC]
+RewriteRule ^html/sobre\.html$ /sobre [R=301,L,NC]
+RewriteRule ^html/avaliacoes\.html$ /avaliacoes [R=301,L,NC]
+RewriteRule ^html/contato\.html$ /contato [R=301,L,NC]
+RewriteRule ^html/privacidade\.html$ /privacidade [R=301,L,NC]
+RewriteRule ^html/termos\.html$ /termos [R=301,L,NC]
+
+# Raiz do domínio abre a Home sem extensão
+RewriteRule ^$ /inicio [R=302,L]
+
+# Reescrita interna para os arquivos HTML originais.
+# A regra precisa vir antes da verificação de arquivos/diretórios.
+RewriteRule ^inicio/?$ html/index.html [L,NC]
+RewriteRule ^servicos/?$ html/servicos.html [L,NC]
+RewriteRule ^portfolio/?$ html/portfolio.html [L,NC]
+RewriteRule ^sobre/?$ html/sobre.html [L,NC]
+RewriteRule ^avaliacoes/?$ html/avaliacoes.html [L,NC]
+RewriteRule ^contato/?$ html/contato.html [L,NC]
+RewriteRule ^privacidade/?$ html/privacidade.html [L,NC]
+RewriteRule ^termos/?$ html/termos.html [L,NC]
+
+# Arquivos e diretórios reais (CSS, JS, imagens e fontes) seguem normalmente.
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]

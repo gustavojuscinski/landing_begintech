@@ -24,7 +24,7 @@ Abra `index.html` na pasta raiz, ou publique **todo o conteúdo desta pasta** em
 
 ## Configuração OBRIGATÓRIA antes da publicação
 
-1. Abra `scripts/variaveis.js` e substitua telefone, e-mail e URLs sociais. Os valores atuais de telefone e URLs sociais são **placeholders**, não contatos verificados.
+1. Os dados de contato já estão configurados em `scripts/variaveis.js`: WhatsApp (42) 99151-2459, e-mail contato@begintech.com.br, operação online e Instagram @begintech.solucoes. Não há links configurados para Facebook, LinkedIn ou YouTube.
 2. Substitua as imagens de recorte pelos mockups originais em alta resolução, se os possuir. Algumas imagens do portfólio são **imagens referenciais do layout**, e não confirmação de trabalhos reais. Não publique como projetos reais sem autorização e validação.
 3. A fonte **Captura Now não foi fornecida**. Para usá-la, obtenha a licença e coloque a fonte em `assets/fonts/CapturaNow.woff2`. O CSS já contém `@font-face`. Enquanto isso, a fonte título substituta é Manrope. Comfortaa carrega pelo Google Fonts.
 4. Confirme a URL/site real para preencher canonical e metadados sociais absolutos quando houver domínio definitivo. Revise textos jurídicos para a realidade da empresa.
@@ -35,7 +35,7 @@ Abra `index.html` na pasta raiz, ou publique **todo o conteúdo desta pasta** em
 - Google Fonts via CDN para Comfortaa e Manrope. Funciona sem internet com fontes padrão do sistema, embora a aparência varie.
 - Ícones SVG embutidos; sem dependência de biblioteca de ícones.
 - Links WhatsApp: `https://wa.me/NUMERO?text=MENSAGEM` (configuração no arquivo de variáveis).
-- Formulário não coleta dados em servidor: valida campos e abre o WhatsApp com mensagem preenchida. O visitante conclui o envio no WhatsApp.
+- Formulário não coleta dados em servidor: valida nome, serviço e mensagem e abre o WhatsApp com o texto preenchido. Não solicita e-mail; o visitante conclui o envio no WhatsApp.
 
 ## Limitações transparentes
 
@@ -46,7 +46,7 @@ O projeto reproduz o layout fornecido com CSS, recortes do material visual e log
 
 - Portfólio com **apenas um cliente real**: GBO Representações, com captura de tela fornecida no pedido. Link do projeto: https://www.gbo26.com.br.
 - Imagem do Sobre substituída por composição HD nova de 1672 × 941 px em WebP, sem interpolação da antiga miniatura.
-- Botão de WhatsApp fixo, com ícone e texto “Vamos conversar”, configurado no `scripts/variaveis.js`. O telefone de exemplo deve ser substituído antes de publicar.
+- Botão de WhatsApp fixo, com ícone e texto “Vamos conversar”, configurado no `scripts/variaveis.js` e direcionado ao número oficial da beginTECH.
 - Tipografia discretamente ampliada, padding extra nas seções e hovers de 0,27 s.
 - Animações respeitam `prefers-reduced-motion`. Nenhuma biblioteca de animações adicional é necessária.
 - O site usa Bootstrap via CDN; para ambiente totalmente offline, baixe o CSS do Bootstrap e altere o link em cada HTML.
@@ -83,3 +83,41 @@ Na Home, o notebook permanece estático. A tela começa com um fundo escuro e o 
 
 ## Vitrines visuais 3D (Portfólio, Sobre, Avaliações)
 Três novas composições conceituais em WebP animadas com CSS (flutuação, anel geométrico, pontos de luz). Os efeitos respeitam `prefers-reduced-motion`. Abaixo de 768 px as ilustrações são ocultadas, mantendo textos e ações visíveis. O portfólio continua mostrando apenas o projeto real GBO; demais ilustrações são conceituais.
+
+
+## URLs amigáveis e publicação
+
+O projeto inclui `.htaccess` para hospedagem Apache com `mod_rewrite` habilitado.
+As rotas públicas são `/inicio`, `/servicos`, `/portfolio`, `/sobre`, `/avaliacoes`,
+`/contato`, `/privacidade` e `/termos`. As antigas URLs `/html/*.html` redirecionam
+para as URLs canônicas sem extensão. A raiz `/` redireciona para `/inicio`.
+
+Envie o arquivo `.htaccess`, `robots.txt` e `sitemap.xml` para a raiz pública do
+domínio, no mesmo nível das pastas `html`, `css`, `scripts` e `assets`.
+Se a hospedagem usar Nginx em vez de Apache, será necessário replicar as regras
+no bloco `server`, pois Nginx não interpreta `.htaccess`.
+
+O loader geométrico é exibido brevemente durante a abertura de cada página e
+desaparece assim que a página termina de carregar, com um limite de segurança
+para não bloquear a navegação.
+
+
+## Publicação na Hostinger (correção das rotas)
+
+**Importante:** envie o CONTEÚDO desta pasta `beginTECH` diretamente para `public_html`,
+não envie a pasta `beginTECH` como uma subpasta. O arquivo `.htaccess` deve ficar
+exatamente em `public_html/.htaccess`, no mesmo nível das pastas `html`, `css`,
+`scripts`, `assets` e das pastas de rota (`inicio`, `servicos`, etc.).
+
+Esta versão inclui duas formas de resolução:
+1. Regras `.htaccess` para reescrever `/inicio` internamente para `html/index.html`,
+   mantendo a URL sem `.html` e sem alterar o endereço no navegador.
+2. Pastas físicas (`/inicio/index.html`, `/servicos/index.html`, etc.) como fallback
+   para ambientes de hospedagem que servem arquivos estáticos e não aplicam rewrite.
+
+No hPanel: Sites → Gerenciar → Gerenciador de Arquivos → `public_html`.
+Faça backup do `.htaccess` atual antes de substituí-lo. Se houver regras preexistentes
+de HTTPS, cache ou segurança, preserve-as e acrescente as regras beginTECH sem apagar
+configurações necessárias da hospedagem.
+
+Após enviar, limpe o cache da Hostinger e teste `/inicio`, `/servicos` e `/contato`.

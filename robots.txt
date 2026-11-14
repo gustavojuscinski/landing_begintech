@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://begintech.com.br/sitemap.xml
