@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="780" height="1020" viewBox="0 0 780 1020">
+<defs>
+ <linearGradient id="case" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#252525"/><stop offset=".45" stop-color="#050505"/><stop offset="1" stop-color="#444"/></linearGradient>
+ <linearGradient id="red" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#f20a33"/><stop offset="1" stop-color="#950014"/></linearGradient>
+ <filter id="shadow" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="24"/></filter>
+</defs>
+<path d="M145 375 582 123 Q632 109 652 165 L747 836 Q755 901 697 932 L200 1010 Z" fill="url(#red)" opacity=".93"/>
+<g transform="translate(170 42) rotate(8 255 468)">
+<rect x="26" y="38" width="504" height="922" rx="69" fill="#0a0a0a" opacity=".35" filter="url(#shadow)"/>
+<rect x="12" y="9" width="504" height="922" rx="66" fill="url(#case)" stroke="#9e9e9e" stroke-width="5"/>
+<rect x="26" y="27" width="476" height="884" rx="51" fill="#fdfdfd"/>
+<rect x="172" y="26" width="173" height="33" rx="16" fill="#090909"/>
+<text x="264" y="157" text-anchor="middle" font-family="Arial,sans-serif" font-weight="700" font-size="66"><tspan fill="#4285F4">G</tspan><tspan fill="#EA4335">o</tspan><tspan fill="#FBBC05">o</tspan><tspan fill="#4285F4">g</tspan><tspan fill="#34A853">l</tspan><tspan fill="#EA4335">e</tspan></text>
+<text x="264" y="198" font-family="Arial,sans-serif" font-size="27" fill="#5b5b5b" text-anchor="middle">Avaliações</text>
+<path d="M45 234H484" stroke="#e8e8e8" stroke-width="3"/>
+<text x="264" y="311" font-family="Arial,sans-serif" font-size="58" font-weight="800" text-anchor="middle" fill="#111">begin<tspan fill="#d20c2b">TECH</tspan></text>
+<text x="87" y="381" font-family="Arial,sans-serif" font-size="41" fill="#242424" font-weight="bold">5,0</text>
+<text x="179" y="380" font-family="Arial,sans-serif" font-size="43" fill="#F4B400">★★★★★</text>
+<text x="418" y="378" font-family="Arial,sans-serif" font-size="23" fill="#666">(32)</text>
+<g fill="#d8d9df"><rect x="65" y="443" width="377" height="21" rx="11"/><rect x="65" y="484" width="319" height="18" rx="9"/><rect x="65" y="543" width="346" height="18" rx="9"/><rect x="65" y="582" width="288" height="18" rx="9"/><rect x="65" y="645" width="365" height="18" rx="9"/><rect x="65" y="685" width="226" height="18" rx="9"/></g>
+<circle cx="265" cy="866" r="7" fill="#ccc"/>
+</g></svg>
